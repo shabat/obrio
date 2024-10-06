@@ -9,5 +9,6 @@ import { SharedModule } from '../shared/shared.module';
   imports: [TypeOrmModule.forFeature([Purchase]), SharedModule],
   controllers: [PurchaseController],
   providers: [PurchaseService],
+  exports: [PurchaseService],
 })
 export class PurchaseModule {}

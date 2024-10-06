@@ -15,6 +15,6 @@ export class PurchaseController {
 
   @Get()
   async get() {
-    return this.purchaseService.get();
+    return this.purchaseService.find();
   }
 }

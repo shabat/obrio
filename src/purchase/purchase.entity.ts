@@ -18,4 +18,10 @@ export class Purchase {
 
   @Column()
   offerId: string;
+
+  @Column({ nullable: true })
+  astrologyReportTime: Date;
+
+  @Column({ default: false })
+  astrologyReportSent: boolean;
 }
