@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { FindManyOptions, Repository } from 'typeorm';
 import { User } from './user.entity';
 import { CreateUserDto } from './dto/create-user.dto';
 
@@ -16,7 +16,7 @@ export class UserService {
     return this.userRepository.save(user);
   }
 
-  async get(): Promise<User[]> {
-    return this.userRepository.find();
+  async find(options?: FindManyOptions<User>): Promise<User[]> {
+    return this.userRepository.find(options);
   }
 }

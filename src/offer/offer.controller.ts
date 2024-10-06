@@ -9,6 +9,6 @@ export class OfferController {
 
   @Get()
   async get() {
-    return this.offerService.get();
+    return this.offerService.find();
   }
 }
