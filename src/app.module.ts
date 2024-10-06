@@ -1,9 +1,12 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { ScheduleModule } from '@nestjs/schedule';
 import { UserModule } from './user/user.module';
 import { OfferModule } from './offer/offer.module';
 import { PurchaseModule } from './purchase/purchase.module';
+import { SharedModule } from './shared/shared.module';
+import { AstrologyModule } from './astrology/astrology.module';
 
 @Module({
   imports: [
@@ -25,9 +28,12 @@ import { PurchaseModule } from './purchase/purchase.module';
       }),
       inject: [ConfigService],
     }),
+    ScheduleModule.forRoot(),
     UserModule,
     OfferModule,
     PurchaseModule,
+    AstrologyModule,
+    SharedModule,
   ],
 })
 export class AppModule {}
